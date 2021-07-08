@@ -1,0 +1,45 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: 0.04em;
+  color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+:root {
+  --title-text-color: #dc56c5;
+  --background-color: #212121;
+  --background-color-second: #0e0e0e;
+}
+/*# sourceMappingURL=main.css.map */
