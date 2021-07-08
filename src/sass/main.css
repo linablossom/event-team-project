@@ -37,6 +37,31 @@ img {
   text-decoration: none;
 }
 
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 598px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 930px;
+  }
+}
+
 :root {
   --title-text-color: #dc56c5;
   --background-color: #212121;
