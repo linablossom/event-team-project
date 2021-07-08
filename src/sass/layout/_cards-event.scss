@@ -1,0 +1,57 @@
+.events__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+  margin-left: -12px;
+}
+
+.card {
+  margin-top: 30px;
+  margin-left: 12px;
+  flex-basis: calc(100% / 2 - 12px);
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc(100% / 3 - 12px);
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc(100% / 4 - 12px);
+  }
+}
+
+.card__img {
+  border-radius: 50px 0;
+}
+.card__title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: center;
+
+  color: #dc56c5;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+.card__date {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.21;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+.card__location {
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.25;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.21;
+  }
+}
