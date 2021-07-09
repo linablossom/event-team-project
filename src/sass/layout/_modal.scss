@@ -50,6 +50,11 @@
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  :focus {
+    fill: #dc56c5;
+  }
 }
 
 .modal {
@@ -135,6 +140,11 @@
     cursor: pointer;
     display: block;
 
+    &:hover,
+    :focus {
+      background-color: #dc56c5;
+    }
+
     @media screen and (min-width: 1200px) {
       margin-top: 20px;
     }
@@ -157,6 +167,13 @@
     border: 1px solid #4c00fe;
     border-radius: 5px;
     cursor: pointer;
+
+    &:hover,
+    :focus {
+      background-color: #dc56c5;
+      color: #ffffff;
+      border: none;
+    }
   }
 }
 
