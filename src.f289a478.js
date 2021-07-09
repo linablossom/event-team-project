@@ -13,4 +13,4 @@ const d={backdrop:document.querySelector(".backdrop"),modal:document.querySelect
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=r(require("./tpl/card_events.hbs"));require("./js/modal.js");var s=r(require("./js/api/fetchListApi"));function r(e){return e&&e.__esModule?e:{default:e}}
 },{"./sass/main.scss":"clu1","./tpl/card_events.hbs":"plnX","./js/modal.js":"RSqK","./js/api/fetchListApi":"SYji"}]},{},["Focm"], null)
-//# sourceMappingURL=/event-team-project/src.5c3c3d5a.js.map
+//# sourceMappingURL=/event-team-project/src.f289a478.js.map
