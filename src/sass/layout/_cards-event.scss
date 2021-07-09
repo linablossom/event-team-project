@@ -1,5 +1,5 @@
 .events__section {
-  padding-top: 20px;
+  // padding-top: 20px;
 }
 .events__list {
   display: flex;
@@ -57,6 +57,10 @@
 .card__img {
   border-radius: 50px 0;
   margin-bottom: 5px;
+  height: 160px;
+  @media screen and (min-width: 768px) {
+    height: 228px;
+  }
 }
 .card__title {
   margin-bottom: 5px;
@@ -82,11 +86,20 @@
   }
 }
 .card__location {
+  position: relative;
   text-align: center;
   font-weight: 600;
   font-size: 12px;
   line-height: 1.25;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 10px;
+    background-image: url(../images/events-section/icon-gps.png);
 
+    transform: translateX(-150%) translateY(36%);
+  }
   @media screen and (min-width: 768px) {
     font-size: 14px;
     line-height: 1.21;
