@@ -1,2 +1,6 @@
 import './sass/main.scss';
-import cardsEvents from './tpl/card_events.hbs';
+import uiService from './js/uiService';
+import initFilters from './js/filters';
+
+initFilters();
+uiService.initialLoading();
