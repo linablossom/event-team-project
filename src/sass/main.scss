@@ -1,8 +1,10 @@
 @import './base/common';
+@import './utils/visually-hidden';
+
 @import './base/containers';
 @import './utils/variables';
 @import './layout/header';
-@import './layout/header';
-@import './layout/backdrop';
-@import './layout/modal';
+@import './layout/event-section';
+@import './layout/cards-event';
+
 @import './layout/footer';
