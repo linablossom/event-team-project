@@ -1,13 +1,13 @@
 {{#each this}}
-  <li class='card' data-index="{{id}}">
-    <img class='card__img' src={{images.0.url}} alt='{{name}}' />
-    <h2 class='card__title'>{{name}}</h2>
-    <p class='card__date'>{{dates.start.localDate}}</p>
-    <p class='card__location'>
-      <svg class='card__location-icon' width='7' height='10'>
-        <use href='./images/form-symbol.svg#icon-Vector'></use>
-        {{location}}
-      </svg>
-    </p>
-  </li>
+<li class='card card-js' data-itemid={{id}}>
+  <img class="card__img" src={{images.0.url}} alt='{{name}}' />
+  <h2 class='card__title'>{{name}}</h2>
+  <p class='card__date'>{{dates.start.localDate}}</p>
+  <p class='card__location'>
+    <svg class='card__location-icon'>
+      <use href='./images/form-symbol.svg#icon-Vector'></use>
+    </svg>
+    {{_embedded.venues.0.name}}
+  </p>
+</li>
 {{/each}}

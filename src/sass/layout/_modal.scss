@@ -50,6 +50,11 @@
   transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  :focus {
+    fill: #dc56c5;
+  }
 }
 
 .modal {
@@ -125,13 +130,20 @@
   }
 
   &__btn-buy {
+    text-decoration: none;
     margin-top: 10px;
     font-weight: 500;
     color: #ffffff;
     padding: 10px 20px;
     background: #4c00fe;
     border-radius: 5px;
-    border: none;
+    cursor: pointer;
+    display: block;
+
+    &:hover,
+    :focus {
+      background-color: #dc56c5;
+    }
 
     @media screen and (min-width: 1200px) {
       margin-top: 20px;
@@ -154,5 +166,31 @@
     background-color: Transparent;
     border: 1px solid #4c00fe;
     border-radius: 5px;
+    cursor: pointer;
+
+    &:hover,
+    :focus {
+      background-color: #dc56c5;
+      color: #ffffff;
+      border: none;
+    }
+  }
+}
+
+// штрихкод
+
+.barcode::before {
+  margin-right: 10px;
+  content: '';
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/modal/mobile_ticket.png);
+  @media screen and (min-width: 1200px) {
+    background-image: url(../images/modal/desctop_ticket.png);
   }
 }
