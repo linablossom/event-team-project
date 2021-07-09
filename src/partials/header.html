@@ -1,1 +1,86 @@
-<h1>Hello</h1>
+<div class="header__background">
+  <picture class="header__bg-picture">
+    <!-- <source
+      srcset="
+        ./images/headerBg-c/desk-header-bg-c.webp    1x,
+        ./images/headerBg-c/desk-header-bg-c@2x.webp 2x
+      "
+      media="(min-width: 1280px)"
+      type="image/webp"
+    /> -->
+    <source
+      srcset="
+        ./images/headerBg-c/desk-header-bg-c.jpg    1x,
+        ./images/headerBg-c/desk-header-bg-c@2x.jpg 2x
+      "
+      media="(min-width: 1280px)"
+    />
+    <!-- <source
+      srcset="
+        ./images/headerBg-c/tabl-header-bg-c.webp    1x,
+        ./images/headerBg-c/tabl-header-bg-c@2x.webp 2x
+      "
+      media="(min-width: 768px)"
+      type="image/webp"
+    /> -->
+    <source
+      srcset="
+        ./images/headerBg-c/tabl-header-bg-c.jpg    1x,
+        ./images/headerBg-c/tabl-header-bg-c@2x.jpg 2x
+      "
+      media="(min-width: 768px)"
+    />
+    <!-- <source
+      srcset="
+        ./images/headerBg-c/mob-header-bg-c.webp    1x,
+        ./images/headerBg-c/mob-header-bg-c@2x.webp 2x
+      "
+      media="(min-width: 320px)"
+      type="image/webp"
+    /> -->
+    <source
+      srcset="
+        ./images/headerBg-c/mob-header-bg-c.jpg    1x,
+        ./images/headerBg-c/mob-header-bg-c@2x.jpg 2x
+      "
+      media="(min-width: 320px)"
+    />
+    <img class="header__img" src="./images/headerBg-c/mob-header-bg-c.jpg" alt="background-img" />
+  </picture>
+</div>
+
+<div class="header container">
+  <picture class="header__logo">
+    <source
+      srcset="./images/logo/desk-logo.png 1x, ./images/logo/desk-logo@2x.png 2x"
+      media="(min-width: 1280px)"
+    />
+    <source
+      srcset="./images/logo/tabl-logo.png 1x, ./images/logo/tabl-logo@2x.png 2x"
+      media="(min-width: 768px)"
+    />
+    <source
+      srcset="./images/logo/mob-logo.png 1x, ./images/logo/mob-logo@2x.png 2x"
+      media="(min-width: 320px)"
+    />
+    <img class="header__img" src="./images/logo/mob-logo.png" alt="logo" />
+  </picture>
+
+  <h1 class="header__title">FIND BEST EVENTS AROUND THE WORLD</h1>
+
+  <div class="header__form">
+    <input
+      class="header__input keySearchWord"
+      type="text"
+      id="keySearchWord"
+      placeholder="Start searching"
+    />
+    <input
+      class="header__input countryList"
+      type="text"
+      id="countryList"
+      placeholder="Choose country"
+    />
+    <!-- добавить иконки на кнопки -->
+  </div>
+</div>
