@@ -1,4 +1,4 @@
-import { createModalMarkup } from '../tpl/card-modal.hbs';
+import { createModalMarkup } from '../../tpl/card-modal.hbs';
 
 // ссилки на DOM
 
@@ -7,6 +7,10 @@ const refs = {
 };
 
 const renderItem = ({ data, loading, error, onRelated }) => {
+  if (!data && !loading && !error) {
+    refs.itemModal.classList.add('is-hidden');
+    return;
+  }
   refs.itemModal.classList.remove('is-hidden');
   const markupModal = document.querySelector('.tpl-modal');
   if (error) {

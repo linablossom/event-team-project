@@ -119,4 +119,11 @@ uiService.onOpenItem = async id => {
   }
 };
 
+uiService.onCloseItem = () => {
+  uiParams.activeItemId = null;
+  uiData.item = null;
+  uiData.itemLoading = false;
+  uiData.itemError = null;
+  updateItem();
+};
 export default uiService;
