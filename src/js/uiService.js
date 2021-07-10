@@ -1,7 +1,7 @@
 import renderService from './renderService';
 import apiService from './apiService';
 
-const { renderList, renderItem, renderFilters, renderPagination } = renderService;
+const { renderList, renderItem, renderPagination } = renderService;
 
 const uiParams = {
   searchKeyword: '',
@@ -57,7 +57,6 @@ const loadList = async () => {
       countryCode: uiParams.countryCode,
       page: uiParams.page,
       perPage: uiParams.perPage,
-      maxPage: uiParams.maxPage,
     });
     uiData.list = data;
     uiData.listLoading = false;

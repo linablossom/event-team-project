@@ -17,7 +17,7 @@ const fetchList = async (searchKeyword, countryCode, page, perPage) => {
   }
   const url = `${API_URL}/events?${renderUrlParams(query)}`;
   const response = await fetch(url);
-  return await response.json();
+  return response.json();
 };
 
 export default fetchList;
