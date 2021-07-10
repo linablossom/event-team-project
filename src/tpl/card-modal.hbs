@@ -1,29 +1,54 @@
+<img class="modal__small-img" src={{images.3.url}} alt='' width="120" />
+<div class="modal__wrap">
+    <div class="modal__big-img-wrap">
+        <img class="modal__big-img" src={{images.3.url}} alt='' />
+    </div>
+    <div class="modal__content-wrap">
+        <h3 class="modal__title modal__title-first">INFO</h3>
+        <p class="modal__text">{{info}}</p>
+        <h3 class="modal__title">WHEN</h3>
+        <p class="modal__text">{{dates.start.localDate}} <br>
+        {{dates.start.localTime}} ({{_embedded.venues.0.city.name}}/{{_embedded.venues.0.country.name}}) </p>
+        <h3 class="modal__title">WHERE</h3>
+        <p class="modal__text">{{_embedded.venues.0.name}}</p>
+        <h3 class="modal__title">WHO</h3>
+        <p class="modal__text">{{name}}</p>
+        <h3 class="modal__title">PRICES</h3>
+        <p class="modal__text barcode">Standart {{priceRanges.0.min}}-{{priceRanges.0.min}} {{priceRanges.0.currency}} </p>
+        <a href={{url}} class="modal__btn-buy">BUY TICKETS</a>
+        <p class="modal__text barcode">VIP</p>
+        <a href='' class="modal__btn-buy">BUY TICKETS</a>
+    </div>
+</div>
+<div class="modal__btn-author-wrap">
+    <button class="modal__btn-author">MORE FROM THIS AUTHOR</button>
+</div> 
 
-    <img class="modal__small-img"
-        src={{}} alt={{}}
-        width="120" />
-    <div class="modal__wrap">
-        <div class="modal__big-img-wrap">
-            <img class="modal__big-img"
-                src={{}}
-                alt={{}} />
-        </div>
-        <div class="modal__content-wrap">
-            <h3 class="modal__title modal__title-first">INFO</h3>
-            <p class="modal__text">Lorem, ipsum.</p>
-            <h3 class="modal__title">WHEN</h3>
-            <p class="modal__text">{{}}</p>
-            <h3 class="modal__title">WHERE</h3>
-            <p class="modal__text">{{}}</p>
-            <h3 class="modal__title">WHO</h3>
-            <p class="modal__text">{{}}</p>
-            <h3 class="modal__title">PRICES</h3>
-            <p class="modal__text barcode">{{}}</p>
-            <a href={{}} class="modal__btn-buy">BUY TICKETS</a>
-            <p class="modal__text barcode">{{}}</p>
-            <a href={{}}  class="modal__btn-buy">BUY TICKETS</a>
-        </div>
-    </div>
-    <div class="modal__btn-author-wrap">
-        <button class="modal__btn-author">MORE FROM THIS AUTHOR</button>
-    </div>
+
+{{!--
+
+=================JSON DATA====================
+
+// INFO
+console.log(data.info);
+// WHEN
+console.log(data.dates.start.localDate);
+console.log(data.dates.start.localTime + data.dates.timezone);
+// WHERE
+console.log(data._embedded.venues[0].name);
+// WHO
+console.log(data.name);
+// PRICE// standart
+console.log(data.priceRanges[0].min);
+console.log(data.priceRanges[0].max);
+console.log(data.priceRanges[0].currency);
+// BUY TICKETS standart
+console.log(data.url);
+// PHOTO
+console.log(data._embedded.attractions[0].images[3].url);
+//CITY
+console.log(data._embedded.venues[0].city.name);
+//COUNTRY
+console.log(data._embedded.venues[0].country.name);
+
+--}}
