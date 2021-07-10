@@ -461,10 +461,10 @@ function onClickBackdrop(e) {
 
 // рендер контента модалки
 
-function renderMarkupModal(data) {
-  refs.markupModal.innerHTML = '';
-  refs.markupModal.insertAdjacentHTML('beforeend', createModalMarkup(data));
-  console.log('ok');
-}
+// function renderMarkupModal(data) {
+//   refs.markupModal.innerHTML = '';
+//   refs.markupModal.insertAdjacentHTML('beforeend', createModalMarkup(data));
+//   console.log('ok');
+// }
 
-renderMarkupModal(data);
+// renderMarkupModal(data);
