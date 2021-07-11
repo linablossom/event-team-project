@@ -1,4 +1,4 @@
-import { createModalMarkup } from '../../tpl/card-modal.hbs';
+import createModalMarkup from '../../tpl/card-modal.hbs';
 
 // ссилки на DOM
 
@@ -6,8 +6,8 @@ const refs = {
   itemModal: document.querySelector('.item-modal'),
 };
 
-const renderItem = ({ data, loading, error, onRelated }) => {
-  if (!data && !loading && !error) {
+const renderItem = ({ id, data, loading, error, onRelated }) => {
+  if (!id) {
     refs.itemModal.classList.add('is-hidden');
     return;
   }
@@ -23,7 +23,9 @@ const renderItem = ({ data, loading, error, onRelated }) => {
   }
   markupModal.innerHTML = '';
   markupModal.insertAdjacentHTML('beforeend', createModalMarkup(data));
-  markupModal.querySelector('.modal__btn-author').addEventListener('click', onRelated);
+  markupModal.querySelector('.modal__btn-author').addEventListener('click', () => {
+    onRelated(data.name);
+  });
 };
 
 export default renderItem;

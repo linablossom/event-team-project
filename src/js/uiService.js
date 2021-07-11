@@ -39,6 +39,7 @@ const updateList = () => {
 
 const updateItem = () => {
   renderItem({
+    id: uiParams.activeItemId,
     data: uiData.item,
     loading: uiData.itemLoading,
     error: uiData.itemError,
@@ -96,11 +97,14 @@ uiService.onChangePage = async page => {
 };
 
 uiService.onShowRelated = async value => {
-  uiParams.countryCode = null;
+  uiParams.countryCode = '';
+  uiParams.page = 1;
+  uiParams.activeItemId = null;
   renderFilters({
     searchKeyword: value,
     countryCode: uiParams.countryCode,
   });
+  updateItem();
   await uiService.onSearch(value);
 };
 
