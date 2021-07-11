@@ -40,4 +40,4 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{"./uiService":"fUog"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/modal.js");var e=r(require("./js/uiService")),i=r(require("./js/filters"));function r(e){return e&&e.__esModule?e:{default:e}}(0,i.default)(),e.default.initialLoading();
 },{"./sass/main.scss":"clu1","./js/modal.js":"RSqK","./js/uiService":"fUog","./js/filters":"KaES"}]},{},["Focm"], null)
-//# sourceMappingURL=/event-team-project/src.0e7d0e98.js.map
+//# sourceMappingURL=/event-team-project/src.8e8449a8.js.map
