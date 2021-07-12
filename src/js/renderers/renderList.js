@@ -19,6 +19,8 @@ const renderList = ({ data, loading, error, onOpen, onReset }) => {
   if (loading) return renderListLoading();
   refs.listContainer.innerHTML = listTpl(data);
 
+// !!!!!!!!!!!!!!!!!!!
+
   refs.listContainer.querySelectorAll('.card-js').forEach(x =>
     x.addEventListener('click', e => {
       e.stopPropagation();
