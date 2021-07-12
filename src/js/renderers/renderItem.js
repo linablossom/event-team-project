@@ -8,6 +8,7 @@ const refs = {
 
 const renderItem = ({ id, data, loading, error, onRelated }) => {
   if (!id) {
+    document.body.style.overflow = 'initial';
     refs.itemModal.classList.add('is-hidden');
     return;
   }
@@ -64,6 +65,7 @@ const renderItem = ({ id, data, loading, error, onRelated }) => {
   markupModal.querySelector('.modal__btn-author').addEventListener('click', () => {
     onRelated(data.name);
   });
+  document.body.style.overflow = 'hidden';
 };
 
 export default renderItem;
