@@ -1,0 +1,28 @@
+.pagination {
+  padding: 10px;
+  background-color: #000;
+}
+
+.pagination-list {
+  list-style: none;
+  font-size: 16px;
+  line-height: 20px;
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-list li {
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
+}
+
+.accent-pagination {
+  color: var(--title-text-color);
+  border: 1px solid var(--title-text-color);
+  border-radius: 10px 0px;
+  cursor: pointer;
+  padding: 5px 12px;
+}
