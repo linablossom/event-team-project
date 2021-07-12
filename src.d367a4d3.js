@@ -19,14 +19,14 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=exports.setCountryValue=exports.setSearchValue=void 0;var e=u(require("lodash.debounce")),t=u(require("./uiService"));function u(e){return e&&e.__esModule?e:{default:e}}const r={keyWordInput:document.querySelector(".keySearchWord"),countryInput:document.querySelector(".countryList")},o=e=>{console.log(e),r.keyWordInput.value=e};exports.setSearchValue=o;const n=e=>{r.countryInput.value=e};exports.setCountryValue=n;const a=()=>{r.keyWordInput.addEventListener("input",(0,e.default)(e=>{t.default.onSearch(e.target.value)},2e3)),r.countryInput.addEventListener("input",(0,e.default)(e=>{t.default.onChangeCountry(e.target.value)},2e3))};var d=a;exports.default=d;
 },{"lodash.debounce":"PZFh","./uiService":"fUog"}],"EzrT":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=require("./filters");const r=({searchKeyword:r,countryCode:t})=>{(0,e.setSearchValue)(r),(0,e.setCountryValue)(t)};var t=r;exports.default=t;
-},{"./filters":"KaES"}],"hDGS":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;const e=({page:e,maxPage:t,onChange:a})=>{};var t=e;exports.default=t;
-},{}],"MJTC":[function(require,module,exports) {
+},{"./filters":"KaES"}],"MgTz":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.pagination=exports.renderUrlParams=void 0;const e=e=>Object.keys(e).map(t=>`${t}=${e[t]}`).join("&");exports.renderUrlParams=e;const t=3,r=(e,t)=>{let r=e-3;const s=e+3,n=[];for(let o=Math.max(r,1);o<=Math.min(s,t);o+=1)n.push(o);return r>2&&n.unshift("..."),r>=2&&n.unshift(1),s<t-1&&n.push("..."),s<t&&n.push(t),n};exports.pagination=r;
+},{}],"hDGS":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=require("../utils");const t=({page:t,maxPage:a,onChange:r})=>{(0,e.pagination)(t,a)};var a=t;exports.default=a;
+},{"../utils":"MgTz"}],"MJTC":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=n(require("./renderers/renderList")),r=n(require("./renderers/renderItem")),t=n(require("./renderFilters")),d=n(require("./renderers/renderPagination"));function n(e){return e&&e.__esModule?e:{default:e}}const u={renderList:e.default,renderItem:r.default,renderFilters:t.default,renderPagination:d.default};var i=u;exports.default=i;
 },{"./renderers/renderList":"N15L","./renderers/renderItem":"PmfL","./renderFilters":"EzrT","./renderers/renderPagination":"hDGS"}],"MuPq":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.API_KEY=exports.API_URL=void 0;const e="https://app.ticketmaster.com/discovery/v2";exports.API_URL=e;const t="zmv5ycaaMcAkjXVPmARuWy8ikjOOOG9S";exports.API_KEY=t;
-},{}],"MgTz":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.renderUrlParams=void 0;const e=e=>Object.keys(e).map(r=>`${r}=${e[r]}`).join("&");exports.renderUrlParams=e;
 },{}],"gcAd":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=require("../constants"),t=require("../utils");const r=async(r,s,a,o)=>{const n={apikey:e.API_KEY,page:a,size:o};r&&(n.keyword=r),s&&(n.countryCode=s);const i=`${e.API_URL}/events?${(0,t.renderUrlParams)(n)}`,u=await fetch(i);return await u.json()};var s=r;exports.default=s;
 },{"../constants":"MuPq","../utils":"MgTz"}],"Wqw0":[function(require,module,exports) {
@@ -40,4 +40,4 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{"./uiService":"fUog"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/modal.js");var e=r(require("./js/uiService")),i=r(require("./js/filters"));function r(e){return e&&e.__esModule?e:{default:e}}(0,i.default)(),e.default.initialLoading();
 },{"./sass/main.scss":"clu1","./js/modal.js":"RSqK","./js/uiService":"fUog","./js/filters":"KaES"}]},{},["Focm"], null)
-//# sourceMappingURL=/event-team-project/src.7db09628.js.map
+//# sourceMappingURL=/event-team-project/src.d367a4d3.js.map
