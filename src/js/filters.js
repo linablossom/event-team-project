@@ -11,6 +11,15 @@ const refs = {
   dropdownIconRef: document.querySelector('.dropdown__svg'),
 };
 
+export const setSearchValue = value => {
+  console.log(value);
+  refs.keyWordInput.value = value;
+};
+
+export const setCountryValue = value => {
+  refs.countryInput.value = value;
+};
+
 const initFilters = () => {
   refs.keyWordInput.addEventListener(
     'input',
