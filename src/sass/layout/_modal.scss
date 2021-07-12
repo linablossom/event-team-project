@@ -65,6 +65,7 @@
 
 .modal__big-img-wrap {
   max-width: 40%;
+  object-fit: cover;
   @media screen and (max-width: 767px) {
     display: none;
     margin: 15px;
@@ -75,6 +76,13 @@
 }
 
 .modal__small-img {
+  max-width: 40%;
+  @media screen and (max-width: 767px) {
+    margin-top: 50px;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 20%;
+  }
   margin: 0 auto;
   margin-top: 40px;
   border-radius: 50%;

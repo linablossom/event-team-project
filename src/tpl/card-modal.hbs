@@ -1,8 +1,8 @@
 
-<img class="modal__small-img" src= {{imageUrl}} alt='{{name}}' width="120" />
+<img class="modal__small-img" src= {{imageUrl}} alt='{{name}}' />
 <div class="modal__wrap">
     <div class="modal__big-img-wrap">
-        <img class="modal__big-img" src={{imageUrl}} alt='' />
+        <img class="modal__big-img" src={{imageUrl}} alt='{{name}}' />
     </div>
     <div class="modal__content-wrap">
         {{#if info}}
@@ -11,22 +11,25 @@
         {{/if}}
         <h3 class="modal__title">WHEN</h3>
         <p class="modal__text">{{dates.start.localDate}} <br>
-        {{localTime}} ({{_embedded.venues.0.city.name}}/{{_embedded.venues.0.country.name}}) </p>
+        {{timeWithoutSec}} ({{_embedded.venues.0.city.name}}/{{_embedded.venues.0.country.name}}) </p>
         <h3 class="modal__title">WHERE</h3>
         <p class="modal__text">{{_embedded.venues.0.city.name}}</p>
         <p class="modal__text">{{_embedded.venues.0.name}}</p>
         <h3 class="modal__title">WHO</h3>
-
         <p class="modal__text">{{name}}</p>
+        {{#if priceRanges}}
         <h3 class="modal__title">PRICES</h3>
-        {{#if priceRanges.0.currency}}
-        <p class="modal__text barcode">Standart {{priceRanges.0.min}}-{{priceRanges.0.min}} {{priceRanges.0.currency}} </p>
-        <a target="_blank" href={{url}} class="modal__btn-buy">BUY TICKETS</a>
-        {{else}}
-        <p class="modal__text barcode"> At the moment there is no information on prices </p>
         {{/if}}
-        <p class="modal__text barcode">VIP</p>
+        {{#each priceRanges}}
+        <p class="modal__text barcode">{{type}} {{min}}-{{max}} {{currency}} </p>
+        {{!-- {{#if type = "VIP"}}
+        <p class="modal__text barcode">{{type}} {{min}}-{{max}} {{currency}} </p>
         <a target="_blank" href='' class="modal__btn-buy">BUY TICKETS</a>
+        {{/if}} --}}
+        {{/each}}
+        {{#if priceRanges}}
+        <a target="_blank" href={{url}} class="modal__btn-buy">BUY TICKETS</a>
+        {{/if}}
     </div>
 </div>
 <div class="modal__btn-author-wrap">

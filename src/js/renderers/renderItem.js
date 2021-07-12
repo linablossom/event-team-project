@@ -38,12 +38,25 @@ const renderItem = ({ id, data, loading, error, onRelated }) => {
     return timeWithoutSec;
   }
 
+  //роблю слово з великої букви
+
+  function capitalLetter(data) {
+    const priceRanges = data.priceRanges;
+    if (!priceRanges) return;
+    const typeWithCapitalLetter = priceRanges.map(item => {
+      item.type = item.type.charAt(0).toUpperCase() + item.type.slice(1);
+    });
+
+    return typeWithCapitalLetter;
+  }
+
   //підготовлюю дані для передачі в hbs
 
   const preparedDataforHbs = {
     ...data,
     imageUrl: renderImg(data),
-    localTime: removeSecond(data),
+    timeWithoutSec: removeSecond(data),
+    typeWithCapitalLetter: capitalLetter(data),
   };
 
   markupModal.innerHTML = '';
