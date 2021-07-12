@@ -29,6 +29,7 @@ const updateList = () => {
     loading: uiData.listLoading,
     error: uiData.listError,
     onOpen: uiService.onOpenItem,
+    onReset: uiService.onResetFilter,
   });
   renderPagination({
     page: uiParams.page,
@@ -130,4 +131,13 @@ uiService.onCloseItem = () => {
   uiData.itemError = null;
   updateItem();
 };
+
+uiService.onResetFilter = async () => {
+  uiParams.page = 1;
+  uiParams.searchKeyword = '';
+  uiParams.countryCode = '';
+  renderFilters({ searchKeyword: '', countryCode: '' });
+  await loadList();
+};
+//console.log(onResetFilter);
 export default uiService;

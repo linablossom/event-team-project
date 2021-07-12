@@ -4,16 +4,18 @@ const refs = {
   listContainer: document.querySelector('.list'),
 };
 
-const renderListError = error => {
-  refs.listContainer.innerHTML = error;
+const renderListError = (error, onReset) => {
+  refs.listContainer.innerHTML = `<div><p>Nothing found</p><button class="button-reset" type="button"> Reset </button></div>`;
+  const buttonReset = document.querySelector('.button-reset');
+  buttonReset.addEventListener('click', onReset);
 };
 
 const renderListLoading = () => {
   refs.listContainer.innerHTML = 'Loading...';
 };
 
-const renderList = ({ data, loading, error, onOpen }) => {
-  if (error) return renderListError(error);
+const renderList = ({ data, loading, error, onOpen, onReset }) => {
+  if (error) return renderListError(error, onReset);
   if (loading) return renderListLoading();
   refs.listContainer.innerHTML = listTpl(data);
 
