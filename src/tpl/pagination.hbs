@@ -1,7 +1,13 @@
-<li><a class="accent-pagination">1</a></li>
-<li><a>2</a></li>
-<li><a>3</a></li>
-<li><a>4</a></li>
-<li><a>5</a></li>
+{{#each this}}
+{{#if this.isCurrent}}
+<li><a class="accent-pagination">{{this.pageNum}}</a></li>
+{{/if}}
+
+{{#if this.isEmpty}}
 <li><span>...</span></li>
-<li><a>29</a></li>
+{{/if}}
+
+{{#if this.isPage}}
+<li><a href="#" data-page={{this.pageNum}}>{{this.pageNum}}</a></li>
+{{/if}}
+{{/each}}
