@@ -173,10 +173,12 @@
   img {
     width: 20px;
     height: 15px;
+    pointer-events: none;
   }
 
   span {
     margin-left: 4px;
+    pointer-events: none;
   }
 }
 
