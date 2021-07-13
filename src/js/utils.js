@@ -24,3 +24,7 @@ export const pagination = (page, maxPage) => {
   }
   return showedBtns;
 };
+
+export const isTablet = () => {
+  return window.innerWidth < 1280 && window.innerWidth > 720;
+};

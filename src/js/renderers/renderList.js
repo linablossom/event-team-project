@@ -1,4 +1,5 @@
 import listTpl from '../../tpl/card_events.hbs';
+import uiService from '../uiService';
 
 const refs = {
   listContainer: document.querySelector('.list'),
@@ -15,21 +16,18 @@ const renderListLoading = () => {
     '<div class="spinner-border text-light" role="status"><span class="sr-only">Loading...</span></div>';
 };
 
-const renderList = ({ data, loading, error, onOpen, onReset }) => {
+const renderList = ({ data, loading, error, onReset }) => {
   if (error) return renderListError(error, onReset);
   if (loading) return renderListLoading();
   refs.listContainer.innerHTML = listTpl(data);
-
-  // !!!!!!!!!!!!!!!!!!!
-
-  refs.listContainer.querySelectorAll('.card-js').forEach(x =>
-    x.addEventListener('click', e => {
-      e.stopPropagation();
-      e.preventDefault();
-      const id = e.currentTarget.dataset.itemid;
-      onOpen(id);
-    }),
-  );
 };
+
+refs.listContainer.addEventListener('click', e => {
+  if (!e.target.classList.contains('card-js')) return;
+  e.stopPropagation();
+  e.preventDefault();
+  const id = e.target.dataset.itemid;
+  uiService.onOpenItem(id);
+});
 
 export default renderList;

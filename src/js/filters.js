@@ -18,6 +18,8 @@ export const setSearchValue = value => {
 
 export const setCountryValue = value => {
   refs.countryListRef.value = value;
+  refs.dropdownTextRef.setAttribute('data-country-id', value);
+  refs.dropdownTextRef.textContent = value;
 };
 
 const initFilters = () => {
@@ -44,6 +46,9 @@ function onClickDropdown(e) {
       refs.dropdownTextRef.textContent = countryName;
     }
 
+    Object.keys(countryList).forEach(code => {
+      countryList[code] = { country: countryList[code], flag: code.toLowerCase() };
+    });
     refs.countryListRef.innerHTML = dropdownTpl(countryList);
 
     if (refs.countryListRef.classList.contains('visually-hidden')) {

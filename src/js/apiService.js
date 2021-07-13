@@ -11,7 +11,6 @@ apiService.getList = async ({ searchKeyword, countryCode, page, perPage }) => {
 
     return { data, pagesCount };
   } catch (e) {
-    console.log(e);
     throw new Error('Cannot load list');
   }
 };
