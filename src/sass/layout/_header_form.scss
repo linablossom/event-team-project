@@ -116,6 +116,7 @@
   left: 0;
   top: 0;
   column-count: 2;
+  font-size: 14px;
   list-style: none;
   height: 320px;
   transition: all 250ms linear;
@@ -124,7 +125,8 @@
   z-index: 1;
 
   padding-top: 45px;
-  padding-left: 15px;
+  padding-left: 5px;
+  padding-bottom: 5px;
 
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -135,7 +137,7 @@
 
   &::-webkit-scrollbar {
     width: 0;
-    height: 7px;
+    height: 8px;
   }
 
   &::-webkit-scrollbar-track {
