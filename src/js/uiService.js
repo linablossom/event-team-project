@@ -1,5 +1,6 @@
 import renderService from './renderService';
 import apiService from './apiService';
+import { PAGE_LIMIT } from './constants';
 
 const { renderList, renderItem, renderFilters, renderPagination } = renderService;
 
@@ -29,6 +30,7 @@ const updateList = () => {
     loading: uiData.listLoading,
     error: uiData.listError,
     onOpen: uiService.onOpenItem,
+    onReset: uiService.onResetFilter,
   });
   renderPagination({
     page: uiParams.page,
@@ -62,7 +64,7 @@ const loadList = async () => {
     });
     uiData.list = data;
     uiData.listLoading = false;
-    uiParams.maxPage = pagesCount;
+    uiParams.maxPage = Math.min(pagesCount + 1, PAGE_LIMIT);
     updateList();
   } catch (e) {
     uiData.listError = 'Cannot load events';
@@ -130,4 +132,13 @@ uiService.onCloseItem = () => {
   uiData.itemError = null;
   updateItem();
 };
+
+uiService.onResetFilter = async () => {
+  uiParams.page = 1;
+  uiParams.searchKeyword = '';
+  uiParams.countryCode = '';
+  renderFilters({ searchKeyword: '', countryCode: '' });
+  await loadList();
+};
+//console.log(onResetFilter);
 export default uiService;

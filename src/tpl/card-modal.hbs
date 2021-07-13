@@ -1,23 +1,29 @@
-<img class="modal__small-img" src={{images.3.url}} alt='' width="120" />
+
+<img class="modal__small-img" src= {{imageUrl}} alt='{{name}}' />
 <div class="modal__wrap">
     <div class="modal__big-img-wrap">
-        <img class="modal__big-img" src={{images.3.url}} alt='' />
+        <img class="modal__big-img" src={{imageUrl}} alt='{{name}}' />
     </div>
     <div class="modal__content-wrap">
+        {{#if info}}
         <h3 class="modal__title modal__title-first">INFO</h3>
         <p class="modal__text">{{info}}</p>
+        {{/if}}
         <h3 class="modal__title">WHEN</h3>
         <p class="modal__text">{{dates.start.localDate}} <br>
-        {{dates.start.localTime}} ({{_embedded.venues.0.city.name}}/{{_embedded.venues.0.country.name}}) </p>
+        {{timeWithoutSec}} ({{_embedded.venues.0.city.name}}/{{_embedded.venues.0.country.name}}) </p>
         <h3 class="modal__title">WHERE</h3>
+        <p class="modal__text">{{_embedded.venues.0.city.name}}</p>
         <p class="modal__text">{{_embedded.venues.0.name}}</p>
         <h3 class="modal__title">WHO</h3>
         <p class="modal__text">{{name}}</p>
+        {{#if priceRanges}}
         <h3 class="modal__title">PRICES</h3>
-        <p class="modal__text barcode">Standart {{priceRanges.0.min}}-{{priceRanges.0.min}} {{priceRanges.0.currency}} </p>
-        <a target="_blank" href={{url}} class="modal__btn-buy">BUY TICKETS</a>
-        <p class="modal__text barcode">VIP</p>
-        <a target="_blank" href='' class="modal__btn-buy">BUY TICKETS</a>
+        {{#each priceRanges}}
+        <p class="modal__text barcode">{{type}} {{min}}-{{max}} {{currency}} </p>
+        <a target="_blank" href={{../url}} class="modal__btn-buy">BUY TICKETS</a>
+        {{/each}}
+        {{/if}}
     </div>
 </div>
 <div class="modal__btn-author-wrap">

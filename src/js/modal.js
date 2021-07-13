@@ -5,7 +5,7 @@ import uiService from './uiService';
 // ссилки на DOM
 
 const refs = {
-  backdrop: document.querySelector('.backdrop'),
+  backdrop: document.querySelector('.wrap-4'),
   modal: document.querySelector('.modal'),
   modalCloseBtn: document.querySelector('.modal-btn-close'),
   markupModal: document.querySelector('.tpl-modal'),
