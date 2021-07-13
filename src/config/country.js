@@ -1,5 +1,4 @@
 export default {
-  default: 'Choose country',
   US: 'United States Of America',
   AD: 'Andorra',
   AI: 'Anguilla',
