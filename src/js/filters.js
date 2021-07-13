@@ -54,14 +54,9 @@ function onClickDropdown(e) {
       refs.dropdownIconRef.classList.remove('dropdown-thumb__svg--open');
     }
   }
-  // if (e.target.getAttributeNames().includes('data-country-id')) {
-  //   uiService.onChangeCountry.countryCode = refs.dropdownTitleRef.getAttribute('data-country-id');
-  //   console.log('🚀 ', uiService);
-  // }
-
-  // uiService
-  //   .then(data => onChangeCountry(data))
-  //   .catch(console.log);
+  if (e.target.getAttributeNames().includes('data-country-id')) {
+    uiService.onChangeCountry(refs.dropdownTitleRef.getAttribute('data-country-id'));
+  }
 }
 
 export default initFilters;
