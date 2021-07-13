@@ -140,5 +140,5 @@ uiService.onResetFilter = async () => {
   renderFilters({ searchKeyword: '', countryCode: '' });
   await loadList();
 };
-//console.log(onResetFilter);
+
 export default uiService;
