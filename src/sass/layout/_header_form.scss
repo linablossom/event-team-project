@@ -152,6 +152,8 @@
 .dropdown-thumb__item {
   page-break-inside: avoid;
   break-inside: avoid;
+    padding-left: 10px;
+
   &:hover,
   &:focus {
     background-color: #1b191b;
