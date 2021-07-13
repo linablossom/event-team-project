@@ -25,6 +25,7 @@
   padding-right: 30px;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
+  outline: none;
 
   @media screen and (max-width: 767px) {
     margin-bottom: 25px;
@@ -154,7 +155,7 @@
 .dropdown-thumb__item {
   page-break-inside: avoid;
   break-inside: avoid;
-    padding-left: 10px;
+  padding-left: 10px;
 
   &:hover,
   &:focus {
@@ -175,3 +176,5 @@
 .dropdown-thumb__svg--open {
   opacity: 0.3;
 }
+
+// Анімація:
