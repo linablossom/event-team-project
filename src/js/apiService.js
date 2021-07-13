@@ -5,7 +5,7 @@ const apiService = {};
 
 apiService.getList = async ({ searchKeyword, countryCode, page, perPage }) => {
   try {
-    const response = await fetchList(searchKeyword, countryCode, page, perPage);
+    const response = await fetchList(searchKeyword, countryCode, page - 1, perPage);
     const data = response._embedded.events;
     const pagesCount = response.page.totalPages;
 

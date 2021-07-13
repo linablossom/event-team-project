@@ -1,0 +1,13 @@
+{{#each this}}
+{{#if this.isCurrent}}
+<li><a class="accent-pagination">{{this.pageNum}}</a></li>
+{{/if}}
+
+{{#if this.isEmpty}}
+<li><span>...</span></li>
+{{/if}}
+
+{{#if this.isPage}}
+<li><a href="#" data-page={{this.pageNum}}>{{this.pageNum}}</a></li>
+{{/if}}
+{{/each}}
