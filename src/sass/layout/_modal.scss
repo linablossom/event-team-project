@@ -10,7 +10,6 @@
   width: 280px;
   border-radius: 150px 0px;
 
-
   transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -186,6 +185,7 @@
 
   &:hover,
   :focus {
+    text-decoration: none;
     background-color: #dc56c5;
     transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -216,7 +216,7 @@
   color: #4c00fe;
   padding: 10px 3px;
   background-color: Transparent;
-  box-shadow: 0 0 20px #333;
+  box-shadow: 0 0 10px #333;
   border: 1px solid #4c00fe;
   border-radius: 5px;
   cursor: pointer;
