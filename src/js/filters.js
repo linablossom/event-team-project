@@ -4,24 +4,24 @@ import countryList from '../config/country.js';
 import dropdownTpl from '../tpl/dropdown.hbs';
 
 const refs = {
-  keyWordInput: document.querySelector('.keySearchWord'),
+  keySearchWord: document.querySelector('.keySearchWord'),
   dropdownRef: document.querySelector('.dropdown-thumb'),
   countryListRef: document.querySelector('.dropdown-thumb__list'),
-  dropdownTitleRef: document.querySelector('.dropdown-thumb__text'),
+  dropdownTextRef: document.querySelector('.dropdown-thumb__text'),
   dropdownIconRef: document.querySelector('.dropdown-thumb__svg'),
 };
 
 export const setSearchValue = value => {
   console.log(value);
-  refs.keyWordInput.value = value;
+  refs.keySearchWord.value = value;
 };
 
 export const setCountryValue = value => {
-  refs.countryInput.value = value;
+  refs.countryListRef.value = value;
 };
 
 const initFilters = () => {
-  refs.keyWordInput.addEventListener(
+  refs.keySearchWord.addEventListener(
     'input',
     debounce(e => {
       uiService.onSearch(e.target.value);
@@ -40,8 +40,8 @@ function onClickDropdown(e) {
       const attributeName = e.target.getAttribute('data-country-id');
       const countryName = e.target.textContent;
 
-      refs.dropdownTitleRef.setAttribute('data-country-id', attributeName);
-      refs.dropdownTitleRef.textContent = countryName;
+      refs.dropdownTextRef.setAttribute('data-country-id', attributeName);
+      refs.dropdownTextRef.textContent = countryName;
     }
 
     refs.countryListRef.innerHTML = dropdownTpl(countryList);
@@ -55,7 +55,7 @@ function onClickDropdown(e) {
     }
   }
   if (e.target.getAttributeNames().includes('data-country-id')) {
-    uiService.onChangeCountry(refs.dropdownTitleRef.getAttribute('data-country-id'));
+    uiService.onChangeCountry(refs.dropdownTextRef.getAttribute('data-country-id'));
   }
 }
 
