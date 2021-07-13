@@ -5,10 +5,10 @@ import dropdownTpl from '../tpl/dropdown.hbs';
 
 const refs = {
   keyWordInput: document.querySelector('.keySearchWord'),
-  dropdownRef: document.querySelector('.dropdown'),
-  countryListRef: document.querySelector('.dropdown__list'),
-  dropdownTitleRef: document.querySelector('.dropdown__title'),
-  dropdownIconRef: document.querySelector('.dropdown__svg'),
+  dropdownRef: document.querySelector('.dropdown-thumb'),
+  countryListRef: document.querySelector('.dropdown-thumb__list'),
+  dropdownTitleRef: document.querySelector('.dropdown-thumb__text'),
+  dropdownIconRef: document.querySelector('.dropdown-thumb__svg'),
 };
 
 export const setSearchValue = value => {
@@ -36,7 +36,7 @@ function onClickDropdown(e) {
     e.target.getAttributeNames().includes('data-dropdown') ||
     e.target.getAttributeNames().includes('data-country-id')
   ) {
-    if (e.target.classList.contains('dropdown__item')) {
+    if (e.target.classList.contains('dropdown-thumb__item')) {
       const attributeName = e.target.getAttribute('data-country-id');
       const countryName = e.target.textContent;
 
@@ -48,16 +48,16 @@ function onClickDropdown(e) {
 
     if (refs.countryListRef.classList.contains('visually-hidden')) {
       refs.countryListRef.classList.remove('visually-hidden');
-      refs.dropdownIconRef.classList.add('dropdown__svg--open');
+      refs.dropdownIconRef.classList.add('dropdown-thumb__svg--open');
     } else {
       refs.countryListRef.classList.add('visually-hidden');
-      refs.dropdownIconRef.classList.remove('dropdown__svg--open');
+      refs.dropdownIconRef.classList.remove('dropdown-thumb__svg--open');
     }
   }
-  if (e.target.getAttributeNames().includes('data-country-id')) {
-    uiService.onChangeCountry.countryCode = refs.dropdownTitleRef.getAttribute('data-country-id');
-    console.log('🚀 ', uiService);
-  }
+  // if (e.target.getAttributeNames().includes('data-country-id')) {
+  //   uiService.onChangeCountry.countryCode = refs.dropdownTitleRef.getAttribute('data-country-id');
+  //   console.log('🚀 ', uiService);
+  // }
 
   // uiService
   //   .then(data => onChangeCountry(data))
