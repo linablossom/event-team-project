@@ -31,9 +31,6 @@
 
   // transform: translate(-50%, -50%) scale(1);
 
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   // ==============================================================
   @media screen and (min-width: 768px) {
     min-width: 595px;
@@ -237,6 +234,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../images/modal/mobile_ticket.png);
+
   @media screen and (min-width: 1200px) {
     background-image: url(../images/modal/desctop_ticket.png);
   }
