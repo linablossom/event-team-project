@@ -1,23 +1,4 @@
 .modal {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-
-  // width: 280px;
-
-  // overflow-y: scroll;
-
-  // height: 95vh;
-
-  // background: #fff2fd;
-  // border-radius: 150px 0px;
-
-  // transform: translate(-50%, -50%) scale(1);
-
-  // transition-property: transform;
-  // transition-duration: 250ms;
-  // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  // ==============================================================
   position: relative;
   text-align: left;
   background-color: white;
@@ -29,12 +10,10 @@
   width: 280px;
   border-radius: 150px 0px;
 
-  // transform: translate(-50%, -50%) scale(1);
-
   transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  // ==============================================================
+
   @media screen and (min-width: 768px) {
     min-width: 595px;
     border-radius: 300px 0px;
@@ -44,6 +23,25 @@
     min-width: 930px;
   }
 }
+
+// допоможні діви модального вікна
+// ========================================
+.wrap-2 {
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.wrap-3 {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.wrap-4 {
+  margin: 10px;
+}
+// ========================================
 
 .modal-btn-close {
   display: flex;
@@ -64,9 +62,14 @@
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
+  transition-property: transform;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
   &:hover,
   :focus {
     fill: #dc56c5;
+    transform: scale(1.3);
   }
 }
 
@@ -88,8 +91,6 @@
 }
 
 .modal__small-img {
-  // max-width: 40%;
-
   box-shadow: 0 0 0 1px #dc56c5, 0 0 20px #333;
 
   margin: 0 auto;
@@ -103,7 +104,6 @@
   }
 
   @media screen and (min-width: 768px) {
-    // max-width: 20%;
     margin-bottom: 20px;
     width: 80px;
     height: 80px;
@@ -172,16 +172,23 @@
   color: #ffffff;
 
   background-color: #4c00fe;
+  box-shadow: 0 0 20px #333;
   border-radius: 5px;
   cursor: pointer;
   display: block;
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   :focus {
+    text-decoration: none;
     background-color: #dc56c5;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
   @media screen and (max-width: 767px) {
@@ -198,6 +205,7 @@
   display: flex;
   justify-content: center;
   margin: 10px 0 114px 0;
+
   @media screen and (min-width: 768px) {
     margin: 30px 0 56px 0;
   }
@@ -208,6 +216,7 @@
   color: #4c00fe;
   padding: 10px 3px;
   background-color: Transparent;
+  box-shadow: 0 0 10px #333;
   border: 1px solid #4c00fe;
   border-radius: 5px;
   cursor: pointer;
@@ -215,12 +224,16 @@
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   :focus {
     background-color: #dc56c5;
     color: #ffffff;
     border: none;
+    transform: scale(1.1);
   }
 }
 
@@ -237,25 +250,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../images/modal/mobile_ticket.png);
+
   @media screen and (min-width: 1200px) {
     background-image: url(../images/modal/desctop_ticket.png);
   }
-}
-
-.wrap-2 {
-  display: table;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-
-.wrap-3 {
-  vertical-align: middle;
-  display: table-cell;
-}
-
-.wrap-4 {
-  margin: 10px;
-  background: rgba(32, 13, 29, 0.6);
-  backdrop-filter: blur(3px);
 }

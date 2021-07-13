@@ -1,13 +1,5 @@
 <div class="header__background">
   <picture class="header__bg-picture">
-    <!-- <source
-      srcset="
-        ./images/headerBg-c/desk-header-bg-c.webp    1x,
-        ./images/headerBg-c/desk-header-bg-c@2x.webp 2x
-      "
-      media="(min-width: 1280px)"
-      type="image/webp"
-    /> -->
     <source
       srcset="
         ./images/headerBg-c/desk-header-bg-c.jpg    1x,
@@ -15,37 +7,25 @@
       "
       media="(min-width: 1280px)"
     />
-    <!-- <source
-      srcset="
-        ./images/headerBg-c/tabl-header-bg-c.webp    1x,
-        ./images/headerBg-c/tabl-header-bg-c@2x.webp 2x
-      "
-      media="(min-width: 768px)"
-      type="image/webp"
-    /> -->
     <source
       srcset="
         ./images/headerBg-c/tabl-header-bg-c.jpg    1x,
         ./images/headerBg-c/tabl-header-bg-c@2x.jpg 2x
       "
-      media="(min-width: 768px)"
+      media="(min-width: 480px)"
     />
-    <!-- <source
-      srcset="
-        ./images/headerBg-c/mob-header-bg-c.webp    1x,
-        ./images/headerBg-c/mob-header-bg-c@2x.webp 2x
-      "
-      media="(min-width: 320px)"
-      type="image/webp"
-    /> -->
     <source
       srcset="
         ./images/headerBg-c/mob-header-bg-c.jpg    1x,
         ./images/headerBg-c/mob-header-bg-c@2x.jpg 2x
       "
-      media="(min-width: 320px)"
+      media="(max-width: 479px)"
     />
-    <img class="header__img" src="./images/headerBg-c/mob-header-bg-c.jpg" alt="background-img" />
+    <img
+      class="header__img-bg"
+      src="./images/headerBg-c/mob-header-bg-c.jpg"
+      alt="background-img"
+    />
   </picture>
 </div>
 
@@ -67,20 +47,36 @@
   </picture>
 
   <h1 class="header__title">FIND BEST EVENTS AROUND THE WORLD</h1>
-
-  <div class="header__form">
-    <input
-      class="header__input keySearchWord"
-      type="text"
-      id="keySearchWord"
-      placeholder="Start searching"
-    />
-    <input
-      class="header__input countryList"
-      type="text"
-      id="countryList"
-      placeholder="Choose country"
-    />
-    <!-- добавить иконки на кнопки -->
+  <!-- ================================== -->
+  <!-- <h1 class="sign">
+    <span class="fast-flicker">F</span>IND<span class="flicker">BEST</span>he<span
+      class="fast-flicker"
+      >b</span
+    >
+  </h1> -->
+  <!-- ================================== -->
+  <div class="header__form-thumb">
+    <form class="header__search-form" name="signup_form">
+      <label class="header__label">
+        <input
+          class="header__form-field keySearchWord"
+          type="text"
+          id="keySearchWord"
+          placeholder="Start searching"
+        />
+        <svg class="search__svg">
+          <use class="search__icon" href="./images/search.svg#search-icon"></use>
+        </svg>
+      </label>
+    </form>
+    <div class="countries__box-dropdown">
+      <div class="dropdown-thumb" data-dropdown>
+        <span class="dropdown-thumb__text" data-country-id="default"> Choose country</span>
+        <svg class="dropdown-thumb__svg">
+          <use class="dropdown-thumb__icon" href="./images/search.svg#country-search"></use>
+        </svg>
+      </div>
+      <ul class="dropdown-thumb__list visually-hidden"></ul>
+    </div>
   </div>
 </div>

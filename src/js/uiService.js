@@ -1,6 +1,7 @@
 import renderService from './renderService';
 import apiService from './apiService';
 import { PAGE_LIMIT } from './constants';
+import { isTablet } from './utils';
 
 const { renderList, renderItem, renderFilters, renderPagination } = renderService;
 
@@ -8,7 +9,7 @@ const uiParams = {
   searchKeyword: '',
   countryCode: '',
   page: 1,
-  perPage: 20,
+  perPage: isTablet() ? 21 : 20,
   maxPage: null,
   activeItemId: null,
 };
@@ -29,7 +30,6 @@ const updateList = () => {
     data: uiData.list,
     loading: uiData.listLoading,
     error: uiData.listError,
-    onOpen: uiService.onOpenItem,
     onReset: uiService.onResetFilter,
   });
   renderPagination({

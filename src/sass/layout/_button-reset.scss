@@ -1,0 +1,38 @@
+.reset-box {
+  margin: 0 auto;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.text-reset {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 61px;
+  color: var(--title-text-color);
+}
+.button-reset {
+  color: var(--title-text-color);
+  border: 1px solid var(--title-text-color);
+  border-radius: 10px 0px;
+  cursor: pointer;
+  background-color: var(--background-color-second);
+  padding: 5px 12px;
+}
+
+.spinner-border {
+  margin: 0 auto;
+  margin-bottom: 150px;
+}
+.sr-only {
+  color: azure;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  clip: auto;
+  overflow: initial;
+  top: 4px;
+  left: -22px;
+}
