@@ -64,7 +64,7 @@ const loadList = async () => {
     });
     uiData.list = data;
     uiData.listLoading = false;
-    uiParams.maxPage = Math.min(pagesCount + 1, PAGE_LIMIT);
+    uiParams.maxPage = Math.min(pagesCount, PAGE_LIMIT);
     updateList();
   } catch (e) {
     uiData.listError = 'Cannot load events';

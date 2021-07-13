@@ -12,7 +12,6 @@ const refs = {
 };
 
 export const setSearchValue = value => {
-  console.log(value);
   refs.keySearchWord.value = value;
 };
 
@@ -46,10 +45,11 @@ function onClickDropdown(e) {
       refs.dropdownTextRef.textContent = countryName;
     }
 
-    Object.keys(countryList).forEach(code => {
-      countryList[code] = { country: countryList[code], flag: code.toLowerCase() };
+    const countriesData = { ...countryList };
+    Object.keys(countriesData).forEach(code => {
+      countriesData[code] = { country: countriesData[code], flag: code.toLowerCase() };
     });
-    refs.countryListRef.innerHTML = dropdownTpl(countryList);
+    refs.countryListRef.innerHTML = dropdownTpl(countriesData);
 
     if (refs.countryListRef.classList.contains('visually-hidden')) {
       refs.countryListRef.classList.remove('visually-hidden');
