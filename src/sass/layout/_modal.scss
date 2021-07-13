@@ -1,23 +1,4 @@
 .modal {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-
-  // width: 280px;
-
-  // overflow-y: scroll;
-
-  // height: 95vh;
-
-  // background: #fff2fd;
-  // border-radius: 150px 0px;
-
-  // transform: translate(-50%, -50%) scale(1);
-
-  // transition-property: transform;
-  // transition-duration: 250ms;
-  // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  // ==============================================================
   position: relative;
   text-align: left;
   background-color: white;
@@ -29,12 +10,9 @@
   width: 280px;
   border-radius: 150px 0px;
 
-  // transform: translate(-50%, -50%) scale(1);
-
   transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  // ==============================================================
 
   @media screen and (min-width: 768px) {
     min-width: 595px;
@@ -45,6 +23,25 @@
     min-width: 930px;
   }
 }
+
+// допоможні діви модального вікна
+// ========================================
+.wrap-2 {
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.wrap-3 {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.wrap-4 {
+  margin: 10px;
+}
+// ========================================
 
 .modal-btn-close {
   display: flex;
@@ -94,8 +91,6 @@
 }
 
 .modal__small-img {
-  // max-width: 40%;
-
   box-shadow: 0 0 0 1px #dc56c5, 0 0 20px #333;
 
   margin: 0 auto;
@@ -109,7 +104,6 @@
   }
 
   @media screen and (min-width: 768px) {
-    // max-width: 20%;
     margin-bottom: 20px;
     width: 80px;
     height: 80px;
@@ -258,21 +252,4 @@
   @media screen and (min-width: 1200px) {
     background-image: url(../images/modal/desctop_ticket.png);
   }
-}
-
-// допоможні діви модального вікна
-.wrap-2 {
-  display: table;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-
-.wrap-3 {
-  vertical-align: middle;
-  display: table-cell;
-}
-
-.wrap-4 {
-  margin: 10px;
 }
