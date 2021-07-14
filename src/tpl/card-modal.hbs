@@ -9,9 +9,11 @@
         <h3 class="modal__title modal__title-first">INFO</h3>
         <p class="modal__text">{{info}}</p>
         {{/if}}
+ 
         <h3 class="modal__title">WHEN</h3>
         <p class="modal__text">{{dates.start.localDate}} <br>
         {{timeWithoutSec}} ({{_embedded.venues.0.city.name}}/{{_embedded.venues.0.country.name}}) </p>
+   
         <h3 class="modal__title">WHERE</h3>
         <p class="modal__text">{{_embedded.venues.0.city.name}}</p>
         <p class="modal__text">{{_embedded.venues.0.name}}</p>
