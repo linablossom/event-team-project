@@ -15,14 +15,19 @@
   margin-right: 6px;
 }
 
+.others-pagination {
+  color: var(--text-color);
+}
+
 .accent-pagination {
   color: var(--title-text-color);
   border: 1px solid var(--title-text-color);
   border-radius: 10px 0px;
   cursor: pointer;
-  padding: 5px 12px;
+  padding: 7px 6px;
 }
 
-.pagination-list a {
-  color: var(--text-color);
+.pagination-list a:hover {
+  text-decoration: none;
+  color: var(--title-text-color);
 }
