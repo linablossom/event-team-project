@@ -3,7 +3,11 @@ import createPaginationTpl from '../../tpl/pagination.hbs';
 import uiService from '../uiService';
 
 const paginationContainer = document.querySelector('.pagination-list');
-const renderPagination = ({ page, maxPage, onChange }) => {
+const renderPagination = ({ page, maxPage, hasError }) => {
+  if (hasError) {
+    paginationContainer.innerHTML = '';
+    return;
+  }
   const pages = pagination(page, maxPage);
 
   paginationContainer.innerHTML = createPaginationTpl(

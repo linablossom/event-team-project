@@ -15,14 +15,6 @@ const refs = {
 
 refs.modalCloseBtn.addEventListener('click', uiService.onCloseItem);
 
-// закрити модалку по натисканню на Esc
-window.addEventListener('keydown', onDownEsc);
-
-function onDownEsc(e) {
-  if (e.code !== 'Escape' || refs.backdrop.classList.contains('is-hidden')) return;
-  uiService.onCloseItem();
-}
-
 // закрити модалку по натисканню на Backdrop
 
 refs.backdrop.addEventListener('click', onClickBackdrop);

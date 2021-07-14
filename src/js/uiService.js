@@ -1,6 +1,7 @@
 import renderService from './renderService';
 import apiService from './apiService';
 import { PAGE_LIMIT } from './constants';
+import { IS_TABLET_LIMIT } from './constants';
 import { isTablet } from './utils';
 
 const { renderList, renderItem, renderFilters, renderPagination } = renderService;
@@ -36,6 +37,7 @@ const updateList = () => {
     page: uiParams.page,
     maxPage: uiParams.maxPage,
     onChange: uiService.onChangePage,
+    hasError: !!uiData.listError,
   });
 };
 
@@ -64,7 +66,7 @@ const loadList = async () => {
     });
     uiData.list = data;
     uiData.listLoading = false;
-    uiParams.maxPage = Math.min(pagesCount, PAGE_LIMIT);
+    uiParams.maxPage = Math.min(pagesCount, isTablet() ? IS_TABLET_LIMIT : PAGE_LIMIT);
     updateList();
   } catch (e) {
     uiData.listError = 'Cannot load events';
