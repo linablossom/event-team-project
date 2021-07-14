@@ -12,6 +12,12 @@
   font-size: 30px;
   line-height: 61px;
   color: var(--title-text-color);
+  margin-bottom: 25px;
+
+  // ===========================
+  text-shadow: 0 0 5px red, 0 0 15px var(--title-text-color), 0 0 25px red, 0 0 20px #f562ff,
+    0 0 30px var(--title-text-color), 0 0 80px var(--title-text-color),
+    0 0 80px var(--title-text-color);
 }
 .button-reset {
   color: var(--title-text-color);
@@ -35,4 +41,70 @@
   overflow: initial;
   top: 4px;
   left: -22px;
+}
+
+// ===========анімація========
+
+button {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  // font-family: 'Staatliches', cursive;
+  letter-spacing: 5px;
+  background: var(--title-text-color);
+  border: 2px solid black;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
+  transition: 500ms;
+}
+
+button:after {
+  content: '';
+  position: absolute;
+  transform: translateX(-55px) translateY(-40px);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0px 0px 50px transparent;
+  transition: 500ms;
+
+  background: white;
+  box-shadow: 0px 0px 20px var(--title-text-color), 0px 0px 30px var(--title-text-color),
+    inset 0px 0px 10px var(--title-text-color);
+  animation: spin 1s infinite linear;
+}
+
+button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+// button:hover:after {
+//   background: white;
+//   box-shadow: 0px 0px 20px var(--title-text-color), 0px 0px 30px var(--title-text-color),
+//     inset 0px 0px 10px var(--title-text-color);
+//   animation: spin 1s infinite linear;
+// }
+
+@keyframes spin {
+  25% {
+    transform: translateX(-25px) translateY(-35px);
+    width: 15px;
+    height: 15px;
+  }
+  50% {
+    transform: translateX(-55px) translateY(-30px);
+    width: 5px;
+    height: 5px;
+  }
+  75% {
+    transform: translateX(-85px) translateY(-35px);
+    width: 15px;
+    height: 15px;
+  }
+}
+
+button:focus {
+  outline: none;
 }
