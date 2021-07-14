@@ -55,6 +55,8 @@ function onClickDropdown(e) {
       e.preventDefault();
       setCountryValue('');
       uiService.onChangeCountry('');
+      refs.countryListRef.classList.add('visually-hidden');
+      refs.dropdownIconRef.classList.remove('dropdown-thumb__svg--open');
     });
 
     if (refs.countryListRef.classList.contains('visually-hidden')) {
