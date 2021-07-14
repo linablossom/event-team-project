@@ -6,7 +6,7 @@ const refs = {
 };
 
 const renderListError = (error, onReset) => {
-  refs.listContainer.innerHTML = `<div class="reset-box"><p class="text-reset">Nothing found</p><button class="button-reset" type="button"> Reset </button></div>`;
+  refs.listContainer.innerHTML = `<div class="reset-box"><p class="text-reset">Nothing found &#9888</p><button class="button-reset" type="button"> Reset </button></div>`;
   const buttonReset = document.querySelector('.button-reset');
   buttonReset.addEventListener('click', onReset);
 };
