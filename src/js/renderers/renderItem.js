@@ -1,4 +1,5 @@
 import createModalMarkup from '../../tpl/card-modal.hbs';
+import { onDownEsc } from '../modal';
 
 // ссилки на DOM
 
@@ -10,6 +11,7 @@ const renderItem = ({ id, data, loading, error, onRelated }) => {
   if (!id) {
     document.body.style.overflow = 'initial';
     refs.itemModal.classList.add('is-hidden');
+    window.removeEventListener('keydown', onDownEsc);
     return;
   }
 
@@ -67,6 +69,8 @@ const renderItem = ({ id, data, loading, error, onRelated }) => {
     onRelated(data.name);
   });
   document.body.style.overflow = 'hidden';
+
+  window.addEventListener('keydown', onDownEsc);
 };
 
 export default renderItem;

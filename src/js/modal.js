@@ -5,7 +5,9 @@ import uiService from './uiService';
 // ссилки на DOM
 
 const refs = {
-  backdrop: document.querySelector('.wrap-4'),
+  // body: document.querySelector('.body-bg'),
+  backdrop: document.querySelector('.backdrop'),
+  wrap4: document.querySelector('.wrap-4'),
   modal: document.querySelector('.modal'),
   modalCloseBtn: document.querySelector('.modal-btn-close'),
   markupModal: document.querySelector('.tpl-modal'),
@@ -16,10 +18,14 @@ const refs = {
 refs.modalCloseBtn.addEventListener('click', uiService.onCloseItem);
 
 // закрити модалку по натисканню на Esc
+
 window.addEventListener('keydown', onDownEsc);
 
 function onDownEsc(e) {
-  if (e.code !== 'Escape' || refs.backdrop.classList.contains('is-hidden')) return;
+  console.log(e);
+  if (e.code !== 'Escape') {
+    return;
+  }
   uiService.onCloseItem();
 }
 
@@ -28,6 +34,8 @@ function onDownEsc(e) {
 refs.backdrop.addEventListener('click', onClickBackdrop);
 
 function onClickBackdrop(e) {
-  if (e.target !== refs.backdrop) return;
+  if (e.target !== refs.wrap4) return;
   uiService.onCloseItem();
 }
+
+export { onDownEsc };
