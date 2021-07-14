@@ -3,7 +3,15 @@ export const renderUrlParams = query =>
     .map(k => `${k}=${query[k]}`)
     .join('&');
 
-const PAGE_SHIFT = 3;
+export const isMobile = () => {
+  return window.innerWidth <= 720;
+};
+
+export const isTablet = () => {
+  return window.innerWidth < 1280 && window.innerWidth > 720;
+};
+
+const PAGE_SHIFT = isMobile() ? 1 : 3;
 
 export const pagination = (page, maxPage) => {
   let firstShowedBtn = page - PAGE_SHIFT;
@@ -23,8 +31,4 @@ export const pagination = (page, maxPage) => {
     showedBtns.push(maxPage);
   }
   return showedBtns;
-};
-
-export const isTablet = () => {
-  return window.innerWidth < 1280 && window.innerWidth > 720;
 };
