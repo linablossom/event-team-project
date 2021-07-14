@@ -25,5 +25,3 @@ function onClickBackdrop(e) {
   if (e.target !== refs.wrap4) return;
   uiService.onCloseItem();
 }
-
-export { onDownEsc };
