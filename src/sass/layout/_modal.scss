@@ -79,8 +79,8 @@
 }
 
 .modal__big-img-wrap {
-  max-width: 40%;
-  object-fit: cover;
+  // height: 100%;
+  // object-fit: cover;
   @media screen and (max-width: 767px) {
     display: none;
     margin: 15px;
@@ -88,6 +88,11 @@
   @media screen and (min-width: 768px) {
     margin: 30px;
   }
+}
+
+.modal__big-img-wrap > img {
+  height: 50%;
+  object-fit: cover;
 }
 
 .modal__small-img {
