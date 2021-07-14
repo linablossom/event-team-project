@@ -152,7 +152,19 @@
   }
 }
 
-.dropdown-thumb__item {
+.all-countries-link {
+  text-decoration: none;
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.dropdown-thumb__item,
+.all-countries-link {
   display: flex;
   page-break-inside: avoid;
   break-inside: avoid;

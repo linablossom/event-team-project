@@ -5,6 +5,7 @@ import dropdownTpl from '../tpl/dropdown.hbs';
 
 const refs = {
   keySearchWord: document.querySelector('.keySearchWord'),
+  dropdownBox: document.querySelector('.countries__box-dropdown'),
   dropdownRef: document.querySelector('.dropdown-thumb'),
   countryListRef: document.querySelector('.dropdown-thumb__list'),
   dropdownTextRef: document.querySelector('.dropdown-thumb__text'),
@@ -18,7 +19,7 @@ export const setSearchValue = value => {
 export const setCountryValue = value => {
   refs.countryListRef.value = value;
   refs.dropdownTextRef.setAttribute('data-country-id', value);
-  refs.dropdownTextRef.textContent = value;
+  refs.dropdownTextRef.textContent = value || 'Choose country';
 };
 
 const initFilters = () => {
@@ -26,11 +27,11 @@ const initFilters = () => {
     'input',
     debounce(e => {
       uiService.onSearch(e.target.value);
-    }, 2000),
+    }, 500),
   );
 };
 
-document.addEventListener('click', onClickDropdown);
+refs.dropdownBox.addEventListener('click', onClickDropdown);
 
 function onClickDropdown(e) {
   if (
@@ -50,6 +51,11 @@ function onClickDropdown(e) {
       countriesData[code] = { country: countriesData[code], flag: code.toLowerCase() };
     });
     refs.countryListRef.innerHTML = dropdownTpl(countriesData);
+    refs.countryListRef.querySelector('.all-countries-link').addEventListener('click', e => {
+      e.preventDefault();
+      setCountryValue('');
+      uiService.onChangeCountry('');
+    });
 
     if (refs.countryListRef.classList.contains('visually-hidden')) {
       refs.countryListRef.classList.remove('visually-hidden');

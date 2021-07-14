@@ -1,10 +1,17 @@
 import createModalMarkup from '../../tpl/card-modal.hbs';
-import { onDownEsc } from '../modal';
+import uiService from '../uiService';
 
 // ссилки на DOM
 
 const refs = {
   itemModal: document.querySelector('.item-modal'),
+};
+
+// закрити модалку по натисканню на Esc
+
+const onDownEsc = e => {
+  if (e.code !== 'Escape') return;
+  uiService.onCloseItem();
 };
 
 const renderItem = ({ id, data, loading, error, onRelated }) => {
@@ -15,6 +22,8 @@ const renderItem = ({ id, data, loading, error, onRelated }) => {
     return;
   }
 
+  window.addEventListener('keydown', onDownEsc);
+
   refs.itemModal.classList.remove('is-hidden');
   const markupModal = document.querySelector('.tpl-modal');
   if (error) {
@@ -22,13 +31,14 @@ const renderItem = ({ id, data, loading, error, onRelated }) => {
     return;
   }
   if (loading) {
-    markupModal.innerHTML = 'loading...';
+    markupModal.innerHTML = '<div class="loader">Loading...</div>';
     return;
   }
 
   //шукаю в масиві картинку з розмірами 640 х 427
 
   function renderImg(data) {
+    if (!data || !data.images) return;
     const images = data.images;
     const imageForModal = images.find(image => image.width === 640 && image.height === 427);
     return imageForModal.url;
@@ -37,6 +47,7 @@ const renderItem = ({ id, data, loading, error, onRelated }) => {
   //обрізаю секунди
 
   function removeSecond(data) {
+    if (!data || !data.dates || !data.dates.start || !data.dates.start.localTime) return;
     const time = data.dates.start.localTime;
     const timeWithoutSec = time.slice(0, -3);
     return timeWithoutSec;
