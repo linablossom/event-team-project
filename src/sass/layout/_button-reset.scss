@@ -6,7 +6,7 @@
   align-items: center;
 }
 .text-reset {
-  font-family: Montserrat;
+  // font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
   font-size: 30px;
@@ -22,7 +22,7 @@
 .button-reset {
   color: var(--title-text-color);
   border: 1px solid var(--title-text-color);
-  border-radius: 10px 0px;
+  border-radius: 25px 0px;
   cursor: pointer;
   background-color: var(--background-color-second);
   padding: 5px 12px;
@@ -45,20 +45,20 @@
 
 // ===========анімація========
 
-button {
+.button-reset {
   width: 150px;
   height: 50px;
   cursor: pointer;
   font-size: 20px;
   // font-family: 'Staatliches', cursive;
   letter-spacing: 5px;
-  background: var(--title-text-color);
-  border: 2px solid black;
+
+  border: 2px solid var(--title-text-color);
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
   transition: 500ms;
 }
 
-button:after {
+.button-reset:after {
   content: '';
   position: absolute;
   transform: translateX(-55px) translateY(-40px);
@@ -75,11 +75,10 @@ button:after {
   animation: spin 1s infinite linear;
 }
 
-button:hover {
+.button-reset:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 10px 10px var(--title-text-color);
 }
-
 // button:hover:after {
 //   background: white;
 //   box-shadow: 0px 0px 20px var(--title-text-color), 0px 0px 30px var(--title-text-color),

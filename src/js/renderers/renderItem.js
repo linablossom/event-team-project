@@ -12,6 +12,7 @@ const renderItem = ({ id, data, loading, error, onRelated }) => {
     refs.itemModal.classList.add('is-hidden');
     return;
   }
+  console.log(id);
   refs.itemModal.classList.remove('is-hidden');
   const markupModal = document.querySelector('.tpl-modal');
   if (error) {
